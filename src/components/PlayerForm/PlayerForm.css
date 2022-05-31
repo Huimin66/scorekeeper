@@ -1,0 +1,12 @@
+.PlayerForm {
+  margin: 4rem 1rem;
+}
+
+.Label {
+  text-align: left;
+}
+
+.InputPlayerName {
+  margin-top: 0.5rem;
+  width: 90vw;
+}
