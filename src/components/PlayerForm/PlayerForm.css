@@ -1,5 +1,7 @@
 .PlayerForm {
+  display: grid;
   margin: 4rem 1rem;
+  gap: 0.5rem;
 }
 
 .Label {

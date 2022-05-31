@@ -1,15 +1,17 @@
 import "./App.css";
-import Button from "./components/Reset/Button.js";
+import Button from "./components/Button/Button.js";
 import Player from "./components/Player/Player.js";
 import PlayerForm from "./components/PlayerForm/PlayerForm";
+import { players } from "./playerData.js";
 
 function App() {
   return (
     <div className="App">
       {/* eslint-disable-next-line */}
       <ul role="list">
-        <Player name="John Doe" score={20} />
-        <Player name="Jane Doe" score={30} />
+        {players.map((player) => {
+          return <Player name={player.name} score={player.score} />;
+        })}
       </ul>
 
       <Button text="Reset scores" />

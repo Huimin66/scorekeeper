@@ -11,6 +11,7 @@ export default function PlayerForm() {
         className="InputPlayerName"
         aria-label="Player name"
       ></input>
+      <button>Create Player</button>
     </form>
   );
 }
