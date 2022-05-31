@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Button from "./components/Reset/Button.js";
+import Player from "./components/Player/Player.js";
+import PlayerForm from "./components/PlayerForm/PlayerForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* eslint-disable-next-line */}
+      <ul role="list">
+        <Player name="John Doe" score={20} />
+        <Player name="Jane Doe" score={30} />
+      </ul>
+
+      <Button text="Reset scores" />
+      <Button text="Reset all" />
+      <PlayerForm />
     </div>
   );
 }
