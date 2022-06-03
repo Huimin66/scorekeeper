@@ -1,7 +1,13 @@
+@import "./css/reset.css";
+
 .App {
   display: grid;
   gap: 2rem;
-  /*   max-width: 300px; */
-  width: 300px;
+  max-width: 300px;
   margin: 0 auto;
+
+  background-color: rgb(221, 219, 215);
+}
+.App h1 {
+  margin: 1rem auto;
 }

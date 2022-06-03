@@ -1,13 +1,23 @@
 import "./Player.css";
 
-export default function Player({ name, score }) {
+export default function Player({
+  name,
+  score,
+  id,
+  onIncreaseScore,
+  onDecreaseScore,
+}) {
   return (
     <li className="PlayerContainer">
       <span className="Name">{name}</span>
       <div className="ChangeScore">
-        <button>-</button>
+        <button onClick={() => onDecreaseScore(id)}>
+          <span className="Operater">-</span>
+        </button>
         <span>{score}</span>
-        <button>+</button>
+        <button onClick={() => onIncreaseScore(id)}>
+          <span className="Operater">+</span>
+        </button>
       </div>
     </li>
   );

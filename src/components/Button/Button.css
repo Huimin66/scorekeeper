@@ -1,8 +1,10 @@
 .ResetButton {
-  color: blueviolet;
-  background-color: bisque;
+  color: rgb(56, 9, 122);
+  background-color: rgb(177, 171, 165);
   border: none;
   border-radius: 6px;
-  padding: 0.8rem;
+  padding: 0.5rem;
   font: inherit;
+  width: 90%;
+  margin: 0 auto;
 }

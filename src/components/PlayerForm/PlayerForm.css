@@ -9,6 +9,17 @@
 }
 
 .InputPlayerName {
-  margin-top: 0.5rem;
-  width: 90vw;
+  margin-top: 0.2rem;
+  height: 1.5rem;
+}
+
+.SubmitButton {
+  color: rgb(56, 9, 122);
+  background-color: rgb(177, 171, 165);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font: inherit;
+  width: 100%;
+  margin: 0 auto;
 }

@@ -1,7 +1,16 @@
 import "./PlayerForm.css";
-export default function PlayerForm() {
+
+export default function PlayerForm({ onCreatePlayer }) {
+  function createNewPlayer(event) {
+    event.preventDefault();
+    const form = event.target;
+    const { name } = form.elements;
+    onCreatePlayer(name.value);
+    form.reset();
+  }
+
   return (
-    <form className="PlayerForm">
+    <form className="PlayerForm" onSubmit={createNewPlayer}>
       <label className="Label" htmlFor="name">
         Add Player
       </label>
@@ -11,7 +20,7 @@ export default function PlayerForm() {
         className="InputPlayerName"
         aria-label="Player name"
       ></input>
-      <button>Create Player</button>
+      <button className="SubmitButton">Create Player</button>
     </form>
   );
 }
