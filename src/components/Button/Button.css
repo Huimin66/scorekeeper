@@ -1,6 +1,8 @@
+@import "../../css/color.css";
+
 .ResetButton {
-  color: rgb(56, 9, 122);
-  background-color: rgb(177, 171, 165);
+  color: var(--dark-purple);
+  background-color: var(--color-secondary);
   border: none;
   border-radius: 6px;
   padding: 0.5rem;

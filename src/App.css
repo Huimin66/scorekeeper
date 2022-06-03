@@ -1,12 +1,13 @@
 @import "./css/reset.css";
+@import "./css/color.css";
 
 .App {
   display: grid;
   gap: 2rem;
   max-width: 300px;
-  margin: 0 auto;
+  margin: 2rem auto;
 
-  background-color: rgb(221, 219, 215);
+  background-color: var(--color-primary);
 }
 .App h1 {
   margin: 1rem auto;
