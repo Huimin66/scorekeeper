@@ -7,13 +7,17 @@ export default function PlayerForm({ onCreatePlayer }) {
     const { name } = form.elements;
     onCreatePlayer(name.value);
     form.reset();
+    name.focus();
   }
 
   return (
-    <form className="PlayerForm" onSubmit={createNewPlayer}>
-      <label className="Label" htmlFor="name">
-        Add Player
-      </label>
+    <form
+      className="PlayerForm"
+      aria-labelledby="Player"
+      onSubmit={createNewPlayer}
+    >
+      <h2 id="Player"> Add new Player</h2>
+      <label htmlFor="name"></label>
       <input
         type="text"
         id="name"

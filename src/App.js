@@ -9,6 +9,7 @@ import { useImmer } from "use-immer";
 function App() {
   /*   const [players, setPlayers] = useState([]); */
   const [players, setPlayers] = useImmer([]);
+  console.log(players.score);
 
   function createPlayer(nameInput) {
     if (!nameInput) {
