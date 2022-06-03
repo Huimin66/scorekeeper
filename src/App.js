@@ -1,12 +1,14 @@
-import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button/Button.js";
 import Player from "./components/Player/Player.js";
 import PlayerForm from "./components/PlayerForm/PlayerForm";
 import { nanoid } from "nanoid";
+import { useImmer } from "use-immer";
+/* import { useState } from "react"; */
 
 function App() {
-  const [players, setPlayers] = useState([]);
+  /*   const [players, setPlayers] = useState([]); */
+  const [players, setPlayers] = useImmer([]);
 
   function createPlayer(nameInput) {
     if (!nameInput) {
@@ -17,6 +19,27 @@ function App() {
   }
 
   function increaseScore(id) {
+    setPlayers((draft) => {
+      const player = draft.find((player) => player.id === id);
+      player.score++;
+    });
+  }
+
+  function decreaseScore(id) {
+    setPlayers((draft) => {
+      const player = draft.find((player) => player.id === id);
+      player.score--;
+    });
+  }
+
+  function resetScore() {
+    setPlayers((draft) => {
+      draft.map((player) => (player.score = 0));
+    });
+  }
+
+  /* The following code realised the functionality with useState */
+  /*  function increaseScore(id) {
     setPlayers(
       players.map((player) => {
         return player.id === id
@@ -42,7 +65,7 @@ function App() {
         return { id: player.id, name: player.name, score: 0 };
       })
     );
-  }
+  } */
 
   function resetAllPlayers() {
     setPlayers([]);
