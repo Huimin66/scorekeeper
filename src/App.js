@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Scorekeeper</h1>
+      <h1 className="Title">Scorekeeper</h1>
       {/* eslint-disable-next-line */}
       <ul role="list">
         {players.map((player) => {
