@@ -1,21 +1,12 @@
-.PlayerForm {
-  display: grid;
-  margin: 4rem 1rem;
-  gap: 0.5rem;
-}
+@import "../../css/color.css";
 
-.InputPlayerName {
-  margin-top: 0.2rem;
-  height: 1.5rem;
-}
-
-.SubmitButton {
+.ResetButton {
   color: var(--dark-purple);
   background-color: var(--color-secondary);
   border: none;
   border-radius: 6px;
   padding: 0.5rem;
   font: inherit;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
