@@ -5,10 +5,14 @@ import PlayerForm from "./components/PlayerForm/PlayerForm";
 import { nanoid } from "nanoid";
 import { useImmer } from "use-immer";
 /* import { useState } from "react"; */
+import { getFromLocal, setToLocal } from "../src/lib/localStorage";
+import { useEffect } from "react";
 
 function App() {
   /*   const [players, setPlayers] = useState([]); */
-  const [players, setPlayers] = useImmer([]);
+  const [players, setPlayers] = useImmer(getFromLocal("players") ?? []);
+
+  useEffect(() => setToLocal("players", players), [players]);
 
   function createPlayer(nameInput) {
     if (!nameInput) {
