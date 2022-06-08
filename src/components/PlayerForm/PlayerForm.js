@@ -1,13 +1,21 @@
 import "./PlayerForm.css";
 
-export default function PlayerForm({ onCreatePlayer }) {
+export default function PlayerForm({ onCreatePlayer, onStoreInput }) {
   function createNewPlayer(event) {
     event.preventDefault();
     const form = event.target;
     const { name } = form.elements;
     onCreatePlayer(name.value);
+
     form.reset();
     name.focus();
+  }
+
+  function saveInput(event) {
+    const form = event.target;
+    console.log(event.target.name);
+    const { name } = form.elements;
+    onStoreInput(name.value);
   }
 
   return (
@@ -15,6 +23,7 @@ export default function PlayerForm({ onCreatePlayer }) {
       className="PlayerForm"
       aria-labelledby="Player"
       onSubmit={createNewPlayer}
+      onChange={saveInput}
     >
       <h2 id="Player"> Add new Player</h2>
       <label htmlFor="name"></label>

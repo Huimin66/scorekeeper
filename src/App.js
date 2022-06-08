@@ -11,8 +11,10 @@ import { useEffect } from "react";
 function App() {
   /*   const [players, setPlayers] = useState([]); */
   const [players, setPlayers] = useImmer(getFromLocal("players") ?? []);
+  const [input, setInput] = useImmer(getFromLocal("input") ?? "");
 
   useEffect(() => setToLocal("players", players), [players]);
+  useEffect(() => setToLocal("input", input), [input]);
 
   function createPlayer(nameInput) {
     if (!nameInput) {
@@ -20,6 +22,10 @@ function App() {
       return;
     }
     setPlayers([...players, { id: nanoid(), name: nameInput, score: 0 }]);
+  }
+
+  function storeInput(input) {
+    setInput(input);
   }
 
   function increaseScore(id) {
@@ -96,7 +102,7 @@ function App() {
 
       <Button onClick={resetScore} text="Reset scores" />
       <Button onClick={resetAllPlayers} text="Reset all" />
-      <PlayerForm onCreatePlayer={createPlayer} />
+      <PlayerForm onCreatePlayer={createPlayer} onStoreInput={storeInput} />
     </div>
   );
 }
