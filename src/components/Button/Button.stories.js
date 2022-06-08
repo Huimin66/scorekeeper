@@ -6,5 +6,5 @@ export default {
 };
 
 export const Default = () => {
-  return <Button>Click</Button>;
+  return <Button text="hello"></Button>;
 };

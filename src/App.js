@@ -1,4 +1,4 @@
-import "./App.css";
+import styled from "styled-components";
 import Button from "./components/Button/Button.js";
 import Player from "./components/Player/Player.js";
 import PlayerForm from "./components/PlayerForm/PlayerForm";
@@ -72,8 +72,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1 className="Title">Scorekeeper</h1>
+    <AppContainer>
+      <Title>Scorekeeper</Title>
       {/* eslint-disable-next-line */}
       <ul role="list">
         {players.map((player) => {
@@ -93,8 +93,21 @@ function App() {
       <Button onClick={resetScore} text="Reset scores" />
       <Button onClick={resetAllPlayers} text="Reset all" />
       <PlayerForm onCreatePlayer={createPlayer} />
-    </div>
+    </AppContainer>
   );
 }
 
 export default App;
+
+const AppContainer = styled.div`
+  display: grid;
+  gap: 2rem;
+  max-width: 300px;
+  margin: 2rem auto;
+
+  background-color: var(--color-primary);
+`;
+
+const Title = styled.h1`
+  margin: 1rem auto;
+`;
