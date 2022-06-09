@@ -12,10 +12,7 @@ export default function PlayerForm({ onCreatePlayer, onStoreInput }) {
   }
 
   function saveInput(event) {
-    const form = event.target;
-    console.log(event.target.name);
-    const { name } = form.elements;
-    onStoreInput(name.value);
+    onStoreInput(event.target.value);
   }
 
   return (
@@ -23,7 +20,6 @@ export default function PlayerForm({ onCreatePlayer, onStoreInput }) {
       className="PlayerForm"
       aria-labelledby="Player"
       onSubmit={createNewPlayer}
-      onChange={saveInput}
     >
       <h2 id="Player"> Add new Player</h2>
       <label htmlFor="name"></label>
@@ -32,6 +28,7 @@ export default function PlayerForm({ onCreatePlayer, onStoreInput }) {
         id="name"
         className="InputPlayerName"
         aria-label="Player name"
+        onChange={saveInput}
       ></input>
       <button className="SubmitButton">Create Player</button>
     </form>

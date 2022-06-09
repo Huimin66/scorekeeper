@@ -21,7 +21,10 @@ function App() {
       alert("Please enter a valid name");
       return;
     }
-    setPlayers([...players, { id: nanoid(), name: nameInput, score: 0 }]);
+    /* setPlayers([...players, { id: nanoid(), name: nameInput, score: 0 }]); */
+    setPlayers((draft) => {
+      draft.push({ id: nanoid(), name: nameInput, score: 0 });
+    });
   }
 
   function storeInput(input) {
