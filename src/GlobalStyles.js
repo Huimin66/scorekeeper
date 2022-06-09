@@ -1,4 +1,12 @@
-* {
+import { createGlobalStyle } from "styled-components";
+const GlobalStyle = createGlobalStyle`
+:root {
+    --color-primary: rgb(221, 219, 215);
+    --color-secondary: rgb(177, 171, 165);
+    --dark-purple: rgb(56, 9, 122);
+  }
+  
+  * {
   box-sizing: border-box;
 }
 
@@ -37,3 +45,7 @@ textarea {
   outline: none;
   border: none;
 }
+
+`;
+
+export default GlobalStyle;
